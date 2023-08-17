@@ -17,9 +17,11 @@ class Config(object):
         TG_BOT_TOKEN = getenv("TG_BOT_TOKEN")
         APP_ID = int(getenv("APP_ID", 123))
         API_HASH = getenv("API_HASH")
-       
-    except:
-        LOGGER.warning("Essential TG Configs are missing")
+        PORT = getenv("PORT", "0")
+        if PORT.isdigit():
+            PORT = int(PORT)
+    except KeyError as e:
+        LOGGER.warning(f"Essential Configs are missing > {e}")
         exit(1)
 
     USER_SESSION = getenv("USER_SESSION", "")
