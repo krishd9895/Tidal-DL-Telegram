@@ -75,7 +75,7 @@ def __setMetaData__(track: Track, album: Album, filepath, contributors, lyrics):
     obj.lyrics = lyrics
     if obj.totaldisc <= 1:
         obj.totaltrack = album.numberOfTracks
-    coverpath = TIDAL_API.getCoverUrl(album.cover, "1280", "1280")
+    coverpath = TIDAL_API.getCoverUrl(album.cover, "3000", "3000")
     obj.save(coverpath)
 
 async def downloadThumb(album, r_id):
@@ -90,7 +90,7 @@ async def downloadThumb(album, r_id):
 async def postCover(album, bot, c_id, r_id, u_name):
     copy = None
     album_art_path = Config.DOWNLOAD_BASE_DIR + f"/thumb/{r_id}-ALBUM.jpg"
-    album_art = TIDAL_API.getCoverUrl(album.cover, "1280", "1280")
+    album_art = TIDAL_API.getCoverUrl(album.cover, "3000", "3000")
     if album_art is not None:
         aigpy.net.downloadFile(album_art, album_art_path)
 
