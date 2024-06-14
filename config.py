@@ -17,6 +17,7 @@ class Config(object):
         TG_BOT_TOKEN = getenv("TG_BOT_TOKEN")
         APP_ID = int(getenv("APP_ID", 123))
         API_HASH = getenv("API_HASH")
+        PORT = getenv("PORT", 8080)
        
     except:
         LOGGER.warning("Essential TG Configs are missing")
