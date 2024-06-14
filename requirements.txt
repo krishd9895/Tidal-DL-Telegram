@@ -1,4 +1,4 @@
-pyrogram==2.0.96
+pyrogram
 tgcrypto
 aiohttp
 psycopg2
