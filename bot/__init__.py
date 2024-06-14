@@ -1,6 +1,7 @@
 import logging
 from config import Config
 from pyrogram import Client
+import subprocess, os
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -37,3 +38,10 @@ USER = Client(
     api_id=Config.APP_ID,
     api_hash=Config.API_HASH
 )
+
+try:
+    subprocess.Popen([f"gunicorn server:app --bind 0.0.0.0:{Config.PORT} --worker-class gevent"], shell=True)
+except:
+    pass
+
+cmd = CMD()
