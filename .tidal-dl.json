@@ -19,7 +19,7 @@
     "onlyM4a": false, 
     "saveAlbumInfo": true, 
     "saveCovers": true, 
-    "showProgress": false, 
+    "showProgress": true, 
     "showTrackInfo": false, 
     "trackFileFormat": "{TrackTitle} - {ArtistName}", 
     "usePlaylistFolder": false, 
